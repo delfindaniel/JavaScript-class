@@ -228,3 +228,288 @@ student.push("linda")
 console.log(student)
 student.unshift("ali")
 console.log(student)
+
+// function practise
+let fuel = 99
+function launch_rocket() {
+function warning_msg() {
+    console.error("not enough fuel")
+}
+if (fuel >= 100) {
+    console.log("we are good to go")
+} else {
+    warning_msg()
+}
+}
+launch_rocket()
+
+// correction
+function tipCalculator(bill) {
+    var percentage;
+    if (bill <5000) {
+        percentage = 0.2
+    } else if (bill >= 5000 && bill < 30000) {
+        percentage = 0.15
+    } else {
+        percentage = 0.1
+    }
+    return percentage * bill
+}
+var bill = [12400, 4800, 26800]
+var tips = [
+    tipCalculator(bill[0]),
+    tipCalculator(bill[1]),
+    tipCalculator(bill[2])
+];
+var finalValues = [bill[0] + tips[0], bill[1] + tips[1], bill[2] + tips[2]];
+console.log(tips, finalValues);
+
+// object are like property or entity, key value pair
+
+var student = {
+    firstName: "daniel",
+    lastName: "delfin",
+    age: 25,
+    state: "taraba",
+    lga: "karim",
+    ca: 44,
+    exam: 66,
+
+    address: {
+        city: "gwagwalada",
+    },
+    email: function () {
+        return "hello@yahoo.com"
+    },
+    children: ["fummi", "joy", "charlse", "david"],
+};
+
+console.log(student)
+
+console.log(student.state)
+console.log(student["firstName"])
+
+var key = "ca"
+console.log(student["ca"])
+
+var worker = Object.create(null)
+worker.job = "doctor"
+worker.salary = 30000
+console.log(worker)
+
+// var job = () => (
+
+//     occupation = "web dev"
+
+//   )
+
+// object with function
+var house = {
+    address: "gwags",
+    monthlyRent: 1000,
+    annual: 0,
+    calculateAnnualRent: function () {
+        // var annual = this.monthlyRent * 12;
+        // return annual;
+        this.annual = this.monthlyRent * 12
+        return this.annual
+    },
+};
+console.log(house.calculateAnnualRent)
+console.log(house.calculateAnnualRent())
+console.log(house)
+// exercise
+// function Bmi   () {
+    // (mark = {
+        // fullName: "mark joel",
+        // mass: 100,
+        // height: 1.99
+    // }),
+    // (janne = {
+        // fullName: "mark joel",
+        // mass: 100,
+        // height: 1.99
+    // });
+    // let bmi = mass / (height * height);
+
+    // markBmi = mass / (height * height);
+    // janeBmi = mass / (height * height);
+
+    // if (markBmi > janeBmi) {
+        // console.log("mark won");
+    // } else if (janeBmi > markBmi) {
+        // console.log("jane wwon");
+    // } else {
+        // console.log("its a draw");
+    // }
+
+// }
+// Bmi();
+
+var mark = {
+    fullName: "mark emeka",
+    mass: 56,
+    height: 1.8,
+    calculateBmi: function () {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    },
+};
+
+var daniel = {
+    fullName: "daniel david",
+    mass: 53,
+    height: 1.7,
+    calculateBmi: function () {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    },
+};
+// var markMass = prompt("what is mark mass kg ?");
+// var markHeight = prompt("what is mark height in meter ?");
+
+// var danielMass = prompt("what is daniel mass in kg ?");
+// var danielHeight = prompt("what is daniel height in meter ?");
+
+// mark.mass = parselFloat(markMass);
+// mark.height = parselFloat(markHeight);
+
+// daniel.mass = parselFloat(danielMass)
+// daniel.height = parselFloat(danielHeight)
+
+if (mark.calculateBmi() > daniel.calculateBmi()) {
+    console.log("mark has the highest bmi ")
+    console.log("full name ", mark.fullName)
+    console.log("bmi ", mark.bmi)
+} else if (daniel.calculateBmi() > mark.calculateBmi()) {
+    console.log("daniel has the highest bmi ")
+    console.log("full name ", daniel.fullName)
+    console.log("bmi ", daniel.bmi)
+} else {
+    console.log("its a stalemate ")
+}
+
+// loops and iteration it is use to repeat a set of task forLoop
+// this is a forloop
+for (var index = 0; index <= 20; index++) {
+    console.log("hello " + index)
+}
+
+var students = ["john", "james", "fred", "dan", "success"]
+
+for (var i = 0; i < students.length; i++) {
+    console.log(students[i]);
+    if (students[i] === "james") {
+        break;
+    }
+}
+
+// whileloop
+
+var counter = 0 
+while (counter < students.lenght) {
+    console.log("hello " + students[counter])
+    counter++
+}
+
+// map
+students.map(function (students) {
+    console.log(students)
+})
+var developers = [
+    {
+        name: "victor",
+        language: "javascript",
+        address: "usa",
+    },
+    {
+        name: "bidemi",
+        language: "javascript",
+        address: "gwagwalada",
+    },
+    {
+        name: "lifted",
+        language: "javascript",
+        address: "kuje",
+    },
+];
+developers.map(function (developer) {
+    console.log(
+        developer.name +
+        "codes in " +
+        developer.language +
+        "and lives in " +
+        developer.address
+    );
+});
+
+// assignment
+
+var john = {
+    fullName: "john ali ",
+    bills: [12400, 4800, 26800, 18000, 4200],
+    calTips: function () {
+        this.tips = []
+        this.finalValues = []
+        for (var i = 0; i < this.bills.lenght; i++) {
+            var percentage;
+            var bill = this.bill[i]
+            if (bill < 5000) {
+                percentage = 0.2;
+            } else if (bill >= 5000 && bill <= 20000) {
+                percentage = 0.15
+            } else {
+                percentage = 0.1
+            }
+            this.tips[i] = bill * percentage;
+            this.finalValues[i] = bill + bill + percentage;
+        }
+    },
+};
+var obi = {
+    fullName: "Obi Peter ",
+    bills: [7700, 47500, 11000, 4000, 4500],
+    calTips: function () {
+        this.tips = []
+        this.finalValues = []
+        for (var i = 0; i < this.bills.length; i++) {
+            var percentage
+            var bill = this.bills[i]
+            if (bill >= 10000 && bill < 47500) {
+                percentage = 0.2
+            } else if (bill >= 10000 && bill < 47500) {
+                percentage = 0.1
+            } else {
+                percentage = 0.25
+            }
+            this.tips[i] = bill * percentage
+            this.finalValues[i] = bill + bill + percentage
+        }
+    },
+};
+function calculateAverage(tips) {
+    var sum = 0
+    for (var i = 0; i < tips.length; i++) {
+        sum = sum + tips[i]
+    }
+    return sum / tips.length
+}
+john.calTips();
+obi.calTips();
+john.average = calculateAverage(john.tips)
+obi.average = calculateAverage(obi.tips)
+console.log(john, obi)
+
+if (john.average > obi.average) {
+    console.log(
+        john.fullName +
+        " 's family pays higher tips, with an average of $" +
+        john.average
+    );
+} else if (obi.average > john.average) {
+    console.log(
+        obi.fullName +
+        " 's family pays higher tips, with an average of $" +
+        obi.average
+    );
+}
